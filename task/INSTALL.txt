@@ -1,0 +1,8 @@
+安裝新版networkx
+
+1. 安裝setuptools
+https://pypi.python.org/pypi/setuptools
+
+2. 下載 networkx 1.9
+https://pypi.python.org/pypi/networkx/1.9
+python setup.py install --prefix=$HOME

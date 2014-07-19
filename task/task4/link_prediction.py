@@ -88,11 +88,16 @@ def feature_extraction(graph, pairs):
     print('adamic/adar score', file=sys.stderr)
     adamic_adar_col = ef.get_adamic_adar_score(graph, pairs)
     
+    print('preferential score', file=sys.stderr)
+    prefer_col = ef.get_preferential_score(graph, pairs)
+
     # normalize the feature value
     cf.normalize_column(shortest_path_length_col)
     cf.normalize_column(edge_embed_col)
     cf.normalize_column(jaccards_col)
     cf.normalize_column(adamic_adar_col)
+    cf.normalize_column(prefer_col)
+
 
     pair_feature = (shortest_path_length_col, edge_embed_col, 
             jaccards_col, adamic_adar_col, prefer_col)
